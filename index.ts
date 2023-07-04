@@ -1,22 +1,25 @@
-let test :string = "typescript";
-let age :number = 50;
-let tempArray :string[] = ['kim', 'park'];
-let tempObject : {member1 : string, member2 : string}= { member1 : 'kim', member2 : 'park' };
+let member :(number | string) = 123;
+// member + 1 연산 불가 (엄격한 것 좋아함)
 
-// 모든 변수에 type을 지정할 필요가 없음
-let member3 = 'Jang'; // 타입 지정 자동으로 된다.
+let members :(number | string)[] = [1, '2', 3];
+let membersOb : { a : (number | string) }= { a : '123' };
 
-let song :{ singer : string, name : string } = {
-    singer : 'ive',
-    name : 'lovedive'
-};
+let temp :any; // 아무거나 가능 but 타입스크립트 의미가 없다.
+let temp2 :unknown; // any와 용도는 같다. but 조금 더 안전하다.
 
-let project :{ 
-    member : string[], 
-    days : number, 
-    started : boolean,
+let user :string = 'kim';
+let age :(undefined | number) = undefined;
+let married :boolean = false;
+let 철수 :(string|undefined|number|boolean)[] = [user, age, married];
+
+let 학교 : {
+    score : (number | boolean)[], 
+    teacher : string,
+    friend : string[] | string
 } = {
-    member : ['kim', 'park'],
-    days: 30,
-    started: true,
-};
+    score : [100, 97, 84],
+    teacher : 'Phil',
+    friend : 'John,'
+}
+학교.score[4] = false;
+학교.friend = ['Lee', 학교.teacher]
