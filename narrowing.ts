@@ -2,7 +2,7 @@ function typeNarrowing(x : number|string) :(number|string) {
     if(typeof x === 'number') 
         return x + 1;
     else
-        return x + '1'
+        return x + '1';
 }
 
 function typeAssertion(x :number|string) {
@@ -19,7 +19,7 @@ assertion 문법의 용도 -> 디버깅, 비상용(임시로 에러 해결, 값�
 function cleaning(array :(string|number)[]){
     for(let i = 0; i < array.length; i++) {
         if(typeof array[i] === "string")
-            array[i] = Number(array[i])
+            array[i] = Number(array[i]);
     }
     return array;
 }
@@ -28,9 +28,9 @@ function cleaning2(a :(string|number)[]) :number[] {
     let array :number[] = [];
     a.forEach((b) => {
         if(typeof b === "string") {
-            array.push(parseFloat(b))
+            array.push(parseFloat(b));
         } else {
-            array.push(b)
+            array.push(b);
         }
     })
     return array;
